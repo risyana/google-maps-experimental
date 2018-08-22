@@ -17,12 +17,10 @@ const data = {
 /* OCTOPUS */
 const controller = {
 
-  setAttractionData: () => {
-    fetch(ATTRACTIONS)
-      .then(response => response.json())
-      .then((result) => {
-        data.dataGlobal = result.data;
-      });
+  setAttractionData: async () => {
+    let result = await fetch(ATTRACTIONS);
+    result = await result.json();
+    data.dataGlobal = result.data;
   },
 
   getAttractionData: () => data.dataGlobal,
@@ -67,39 +65,44 @@ const controller = {
         window.location.href = window.location.href;
       }
 
+      // create marker with label
+      let marker = new MarkerWithLabel(markerProp);
+
+      // add envent listner
+      marker = controller.setListenerToMarkers(marker, elm.id);
+
       return {
         id: elm.id,
-        marker: new MarkerWithLabel(markerProp),
+        marker,
       };
     });
   },
 
-  setListenerToMarkers: () => {
-    data.markersGlobal.forEach((elm) => {
-      const { marker } = elm;
-      marker.addListener('click', () => {
-        data.mapGlobal.setZoom(ZOOM_IN);
-        data.mapGlobal.setCenter(marker.getPosition());
-        view.displayDetailAttraction(elm.id);
-      });
-      marker.addListener('mouseover', () => {
-        marker.set('icon', data.markerIconBigger);
-        marker.set('labelClass', 'marker_label_mouseover');
-        marker.set('labelAnchor', new google.maps.Point(25, 100));
-      });
-      marker.addListener('mouseout', () => {
-        marker.set('icon', data.markerIcon);
-        marker.set('labelClass', 'marker_label_default');
-        marker.set('labelAnchor', new google.maps.Point(12, 44));
-      });
+  setListenerToMarkers: (marker, id) => {
+    marker.addListener('click', () => {
+      data.mapGlobal.setZoom(ZOOM_IN);
+      data.mapGlobal.setCenter(marker.getPosition());
+      view.displayDetailAttraction(id);
     });
+    marker.addListener('mouseover', () => {
+      marker.set('icon', data.markerIconBigger);
+      marker.set('labelClass', 'marker_label_mouseover');
+      marker.set('labelAnchor', new google.maps.Point(25, 100));
+    });
+    marker.addListener('mouseout', () => {
+      marker.set('icon', data.markerIcon);
+      marker.set('labelClass', 'marker_label_default');
+      marker.set('labelAnchor', new google.maps.Point(12, 44));
+    });
+
+    return marker;
   },
 
-  init: () => {
-    controller.setAttractionData();
-    setTimeout(() => {
-      view.render();
-    }, 1000);
+  init: async () => {
+    await controller.setAttractionData();
+    data.mapGlobal = await controller.createMap();
+    data.markersGlobal = await controller.createMarker();
+    view.render();
   },
 };
 
@@ -168,16 +171,6 @@ function initMap() {
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(60, 120),
   };
-
-  data.mapGlobal = controller.createMap();
-
-  setTimeout(() => {
-    data.markersGlobal = controller.createMarker();
-  }, 1000);
-
-  setTimeout(() => {
-    controller.setListenerToMarkers();
-  }, 1000);
 }
 
 controller.init();
