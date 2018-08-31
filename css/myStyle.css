@@ -1,0 +1,132 @@
+/* Body */
+body {
+  background-color: #282c37; }
+  body div#menu {
+    width: 230px;
+    padding-top: 80px;
+    background-color: #282c37;
+    height: 80vh; }
+    body div#menu div#browse h3 {
+      color: #56b8e6;
+      margin-left: 15px; }
+    body div#menu ul {
+      padding: 0;
+      list-style-type: none; }
+    body div#menu li {
+      font-weight: bold;
+      font-size: 12px; }
+      body div#menu li a.browse {
+        display: block;
+        background-color: inherit;
+        color: white;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 10px;
+        padding-left: 15px; }
+        body div#menu li a.browse:hover {
+          color: #56b8e6;
+          text-decoration: none; }
+      body div#menu li a.active {
+        color: #56b8e6;
+        background-color: #1c1f27; }
+
+/* Map Container */
+div#header {
+  background-color: #282c37;
+  color: white;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+  padding-left: 20px;
+  text-align: center; }
+
+/* Map */
+div#maps {
+  display: block;
+  width: 100%;
+  height: 100vh; }
+
+.marker_label_default {
+  width: auto;
+  height: 25px;
+  border: 1px solid #282c37;
+  border-radius: 15px 0px 0px 15px;
+  background: #282c37;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  padding: 5px; }
+
+.marker_label_mouseover {
+  width: auto;
+  height: 60px;
+  border: 1px solid #56b8e6;
+  border-radius: 60px 0px 0px 60px;
+  background: #56b8e6;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  padding: 15px; }
+
+/* Informasi */
+div#informasi {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  right: 0;
+  background-color: #282c37;
+  overflow-x: hidden;
+  transition: 0.5s;
+  color: white;
+  font-size: 11px; }
+  div#informasi span.rigth_buttons {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 24px;
+    color: white; }
+    div#informasi span.rigth_buttons a.btn_fa {
+      margin-right: 10px;
+      color: white; }
+    div#informasi span.rigth_buttons a.btn_fa:hover {
+      text-decoration: none;
+      color: #dfdfdf; }
+  div#informasi p#title {
+    padding: 5px;
+    padding-left: 20px;
+    background-color: #72cdd2;
+    font-weight: bold;
+    font-size: 14px; }
+  div#informasi p#desc {
+    margin-left: 20px;
+    margin-right: 15px; }
+  div#informasi p#span_address {
+    margin-left: 20px;
+    font-size: 11px; }
+    div#informasi p#span_address i#address_icon {
+      color: #72e5ff; }
+    div#informasi p#span_address i#url_icon {
+      color: #79dd4b; }
+  div#informasi p#span_url {
+    margin-left: 20px;
+    font-size: 11px; }
+    div#informasi p#span_url a#url {
+      color: white;
+      text-decoration: none;
+      font-size: 11px; }
+      div#informasi p#span_url a#url:hover {
+        color: gray;
+        font-size: 11px;
+        cursor: pointer; }
+
+/*# sourceMappingURL=myStyle.css.map */
