@@ -42,21 +42,26 @@
 
 		<script type="text/template" data-template="detailInformation">
 			<img id="pics" src='image/{{id}}.jpg'/>
-			<span class="rigth_buttons">
-				<a class="btn_fa" href="javascript:void(0)" onclick="view.closeDetailAttraction()">
-					<i class="fa fa-times-circle fa-sm"></i>
-				</a>
-			</span>
-			<p id="title">{{name}}</p>
-			<p id="desc">{{desc}}</p>
-			<p id="span_address">
-				<i class="fa fa-map-marker fa-lg" id='address_icon'> </i> 
-				<span id="address">{{address}}</span>
-			</p>
-			<p id="span_url">
-				<i class="fa fa-globe fa-sm" id='url_icon'></i>
-				<a target=_blank id="url">{{url}}</a>
-			</p>
+			<div class="buttonContainer">
+				<span class="rigth_buttons">
+					<a class="btn_fa" href="javascript:void(0)" onclick="view.closeDetailAttraction()">
+						<i class="fa fa-times-circle fa-sm"></i> 
+					</a>
+				</span>
+			</div>
+			<div class="information">
+				<p id="title">{{name}}</p>
+				<p id="desc">{{desc}}</p>
+				<p id="span_address">
+					<i class="fa fa-map-marker fa-lg" id='address_icon'> </i> 
+					<span id="address">{{address}}</span>
+				</p>
+				<p id="span_url">
+					<i class="fa fa-globe fa-sm" id='url_icon'></i>
+					<a target=_blank id="url">{{url}}</a>
+				</p>
+			</div>
+
 		</script>
 
 		<!-- <script src="js/script.js"></script> -->

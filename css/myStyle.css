@@ -17,7 +17,8 @@ div.mapContainer {
   flex-grow: 1; }
 
 div.informationBar {
-  width: 0; }
+  width: 0;
+  max-width: 250px; }
 
 /* Sidebar */
 div.sidebar {
@@ -85,19 +86,25 @@ div.informationBar {
   transition: 0.5s;
   color: white;
   font-size: 11px; }
-  div.informationBar span.rigth_buttons {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    font-size: 24px;
-    color: white; }
-    div.informationBar span.rigth_buttons a.btn_fa {
-      margin-right: 10px;
+  div.informationBar img#pics {
+    height: 200px;
+    margin: 0; }
+  div.informationBar div.buttonContainer {
+    position: static; }
+    div.informationBar div.buttonContainer span.rigth_buttons {
+      position: relative;
+      top: -200px;
+      left: 220px;
+      font-size: 24px;
       color: white; }
-    div.informationBar span.rigth_buttons a.btn_fa:hover {
-      text-decoration: none;
-      color: #dfdfdf; }
+      div.informationBar div.buttonContainer span.rigth_buttons a.btn_fa {
+        margin-right: 10px;
+        color: white; }
+      div.informationBar div.buttonContainer span.rigth_buttons a.btn_fa:hover {
+        text-decoration: none;
+        color: #dfdfdf; }
   div.informationBar p#title {
+    margin-top: -30px;
     padding: 5px;
     padding-left: 20px;
     background-color: #56b8e6;
@@ -124,5 +131,66 @@ div.informationBar {
         color: gray;
         font-size: 11px;
         cursor: pointer; }
+
+@media (max-width: 450px) {
+  /* Layout */
+  div.container {
+    flex-direction: column; }
+
+  div.sidebar {
+    width: 100%;
+    height: 60px; }
+
+  div.mapContainer {
+    height: 100%;
+    width: 100%; }
+    div.mapContainer div#maps {
+      height: 100%; }
+
+  div.informationBar {
+    height: 0;
+    width: 0;
+    max-width: 450px; }
+
+  /* Information Bar */
+  div.informationBar {
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    font-size: 11px; }
+    div.informationBar img#pics {
+      display: none; }
+    div.informationBar div.buttonContainer {
+      text-align: right;
+      width: 100%;
+      height: 1px;
+      padding: 0; }
+      div.informationBar div.buttonContainer span.rigth_buttons {
+        width: 100%;
+        top: 0;
+        left: 0;
+        font-size: 18px; }
+        div.informationBar div.buttonContainer span.rigth_buttons a.btn_fa {
+          margin-right: 10px; }
+        div.informationBar div.buttonContainer span.rigth_buttons a.btn_fa:hover {
+          color: #dfdfdf; }
+    div.informationBar p#title {
+      text-align: center;
+      margin-top: 0;
+      padding: 2px;
+      padding-left: 2px; }
+    div.informationBar p#desc {
+      margin-left: 4px;
+      margin-right: 4px; }
+    div.informationBar p#span_address {
+      margin-left: 4px;
+      font-size: 11px; }
+    div.informationBar p#span_url {
+      margin-left: 4px;
+      font-size: 11px; }
+      div.informationBar p#span_url a#url {
+        font-size: 11px; }
+        div.informationBar p#span_url a#url:hover {
+          font-size: 11px; } }
 
 /*# sourceMappingURL=myStyle.css.map */

@@ -141,6 +141,7 @@ const view = {
   displayDetailAttraction: (id) => {
     const informationBar = document.querySelector('div.informationBar');
     const detailTemplate = document.querySelector('script[data-template="detailInformation"]').innerHTML;
+    const mapContainer = document.querySelector('div.mapContainer');
     const attr = controller.getDetailAttraction(id);
 
     view.closeDetailAttraction();
@@ -153,7 +154,9 @@ const view = {
       .replace(/{{url}}/g, attr.url);
 
     setTimeout(() => {
-      informationBar.style.width = '250px';
+      mapContainer.style.height = '65vh';
+      informationBar.style.width = '100%';
+      informationBar.style.height = '100%';
       informationBar.innerHTML = '';
       informationBar.insertAdjacentHTML('beforeend', detailAttraction);
     }, 500);
@@ -161,6 +164,7 @@ const view = {
 
   closeDetailAttraction: () => {
     const informationBar = document.querySelector('div.informationBar');
+    informationBar.style.height = 0;
     informationBar.style.width = 0;
     informationBar.innerHTML = '';
   },

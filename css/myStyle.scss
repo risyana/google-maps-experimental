@@ -3,12 +3,14 @@ $secondColor: #56b8e6;
 $thirdColor: #1c1f27;
 
 /* Body */
+
 body {
   font-family: 'Trebuchet MS';
   background-color: $mainColor;
 }
 
 /* Layout */
+
 div.container {
   margin: -10px;
   display: flex;
@@ -26,9 +28,12 @@ div.mapContainer {
 
 div.informationBar {
   width: 0;
+  max-width: 250px;
 }
 
+
 /* Sidebar */
+
 div.sidebar {
   background-color: $mainColor;
 
@@ -78,6 +83,7 @@ div.sidebar {
 }
 
 /* Map */
+
 div#maps {
   width: 100%;
   height: 100vh;
@@ -107,6 +113,7 @@ div#maps {
 
 
 /* Information bar */
+
 div.informationBar {
   height: 100%;
   width: 0;
@@ -115,25 +122,35 @@ div.informationBar {
   color: white;
   font-size: 11px;
 
-  span.rigth_buttons {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    font-size: 24px;
-    color: white;
+  img#pics {
+    height: 200px;
+    margin: 0;
+  }
 
-    a.btn_fa {
-      margin-right: 10px;
+  div.buttonContainer {
+    position: static;
+
+    span.rigth_buttons {
+      position: relative;
+      top: -200px;
+      left: 220px;
+      font-size: 24px;
       color: white;
-    }
 
-    a.btn_fa:hover {
-      text-decoration: none;
-      color: rgb(223, 223, 223);
+      a.btn_fa {
+        margin-right: 10px;
+        color: white;
+      }
+
+      a.btn_fa:hover {
+        text-decoration: none;
+        color: rgb(223, 223, 223);
+      }
     }
   }
 
   p#title {
+    margin-top: -30px;
     padding: 5px;
     padding-left: 20px;
     background-color: $secondColor;
@@ -178,3 +195,5 @@ div.informationBar {
   }
 
 }
+
+@import 'myStyleMobile';
