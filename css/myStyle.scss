@@ -3,14 +3,12 @@ $secondColor: #56b8e6;
 $thirdColor: #1c1f27;
 
 /* Body */
-
 body {
   font-family: 'Trebuchet MS';
   background-color: $mainColor;
 }
 
 /* Layout */
-
 div.container {
   margin: -10px;
   display: flex;
@@ -23,11 +21,14 @@ div.sidebar {
 }
 
 div.mapContainer {
-  display: flex;
   flex-grow: 1;
 }
 
+div.informationBar {
+  width: 0;
+}
 
+/* Sidebar */
 div.sidebar {
   background-color: $mainColor;
 
@@ -76,17 +77,7 @@ div.sidebar {
 
 }
 
-/* Map Container */
-
-div#header {
-  background-color: $mainColor;
-  color: white;
-  height: 60px;
-  text-align: center;
-}
-
 /* Map */
-
 div#maps {
   width: 100%;
   height: 100vh;
@@ -94,8 +85,7 @@ div#maps {
 
 .marker_label_default {
   width: auto;
-  height: 25px;
-  border: 1px solid $mainColor;
+  height: 13px;
   border-radius: 15px 0px 0px 15px;
   background: $mainColor;
   text-align: center;
@@ -107,26 +97,20 @@ div#maps {
 .marker_label_mouseover {
   width: auto;
   height: 25px;
-  border: 1px solid $secondColor;
   border-radius: 60px 0px 0px 60px;
   background: $secondColor;
   text-align: center;
   font-size: 15px;
-  color: white;
+  color: $mainColor;
   padding: 15px;
 }
 
-/* Informasi */
 
-div#informasi {
+/* Information bar */
+div.informationBar {
   height: 100%;
   width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
   background-color: $mainColor;
-  overflow-x: hidden;
   transition: 0.5s;
   color: white;
   font-size: 11px;
@@ -152,7 +136,7 @@ div#informasi {
   p#title {
     padding: 5px;
     padding-left: 20px;
-    background-color: #72cdd2;
+    background-color: $secondColor;
     font-weight: bold;
     font-size: 14px;
   }
@@ -167,11 +151,11 @@ div#informasi {
     font-size: 11px;
 
     i#address_icon {
-      color: #72e5ff;
+      color: $secondColor;
     }
 
     i#url_icon {
-      color: #79dd4b;
+      color: $secondColor;
     }
 
   }

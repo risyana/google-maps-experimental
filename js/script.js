@@ -139,7 +139,7 @@ const view = {
   },
 
   displayDetailAttraction: (id) => {
-    const detailContainer = document.querySelector('div#informasi');
+    const informationBar = document.querySelector('div.informationBar');
     const detailTemplate = document.querySelector('script[data-template="detailInformation"]').innerHTML;
     const attr = controller.getDetailAttraction(id);
 
@@ -153,16 +153,16 @@ const view = {
       .replace(/{{url}}/g, attr.url);
 
     setTimeout(() => {
-      detailContainer.innerHTML = '';
-      detailContainer.style.width = '250px';
-      detailContainer.insertAdjacentHTML('beforeend', detailAttraction);
+      informationBar.style.width = '250px';
+      informationBar.innerHTML = '';
+      informationBar.insertAdjacentHTML('beforeend', detailAttraction);
     }, 500);
   },
 
   closeDetailAttraction: () => {
-    const detailContainer = document.querySelector('div#informasi');
-    detailContainer.innerHTML = '';
-    detailContainer.style.width = 0;
+    const informationBar = document.querySelector('div.informationBar');
+    informationBar.style.width = 0;
+    informationBar.innerHTML = '';
   },
 
   init: () => {
