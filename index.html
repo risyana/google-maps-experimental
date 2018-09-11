@@ -27,16 +27,13 @@
 						</li>
 					</script>
 			</div>
-
 			<div class="mapContainer">
 				<div id="maps">
 					<!-- google maps is here -->
 				</div>
 			</div>
-
 			<div class="informationBar">
 			</div>
-
 		</div>
 
 
@@ -63,6 +60,24 @@
 			</div>
 
 		</script>
+		
+		<div class="drawer">
+			<!-- sidebar of attraction list for mobile view -->
+		</div>
+
+		<div class="backdrop"  onClick ="view.clickBurgerIconHandler()">
+			<!-- 
+				Transparent divs to :
+				- Indicate the drawer is open
+				- Close the drawer when in open 
+			-->
+		</div>
+
+		<div class="burgerIcon" onClick ="view.clickBurgerIconHandler()" >
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 
 		<!-- <script src="js/script.js"></script> -->
 		<script src="js/script.js"></script>
