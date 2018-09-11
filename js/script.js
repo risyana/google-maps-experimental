@@ -80,9 +80,8 @@ const controller = {
 
   setListenerToMarkers: (marker, id) => {
     marker.addListener('click', () => {
-      data.mapGlobal.setZoom(ZOOM_IN);
+      controller.clickAttractionHanlder(id);
       data.mapGlobal.setCenter(marker.getPosition());
-      view.displayDetailAttraction(id);
     });
     marker.addListener('mouseover', () => {
       marker.set('icon', data.markerIconBigger);
@@ -98,11 +97,25 @@ const controller = {
     return marker;
   },
 
+  clickAttractionHanlder: (id) => {
+    controller.backToInitialZoomCenter();
+    setTimeout(() => {
+      data.mapGlobal.setZoom(ZOOM_IN);
+      view.displayDetailAttraction(id);
+    }, 400);
+  },
+
+  backToInitialZoomCenter: () => {
+    data.mapGlobal.setCenter(data.mapCenterGlobal);
+    data.mapGlobal.setZoom(ZOOM_INIT);
+    view.closeDetailAttraction();
+  },
+
   init: async () => {
     await controller.setAttractionData();
     data.mapGlobal = await controller.createMap();
     data.markersGlobal = await controller.createMarker();
-    view.render();
+    view.init();
   },
 };
 
@@ -114,6 +127,8 @@ const view = {
     const linkTemplate = document.querySelector('script[data-template="attraction"]').innerHTML;
 
     const attractions = controller.getAttractionData();
+
+    linkContainer.innerHTML = '';
 
     attractions.forEach((attr) => {
       const link = linkTemplate
@@ -150,7 +165,7 @@ const view = {
     detailContainer.style.width = 0;
   },
 
-  render: () => {
+  init: () => {
     view.displayAttractions();
   },
 };
