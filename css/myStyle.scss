@@ -34,7 +34,8 @@ div.informationBar {
 
 /* Sidebar */
 
-div.sidebar {
+div.sidebar,
+div.drawer {
   background-color: $mainColor;
 
   h3.title {
@@ -52,6 +53,7 @@ div.sidebar {
   }
 
   li {
+    list-style-type: none;
     font-weight: bold;
     font-size: 12px;
 
@@ -195,5 +197,64 @@ div.informationBar {
   }
 
 }
+
+/* drawer */
+
+div.drawer {
+  display: none;
+  z-index: 30;
+  width: 200px;
+  height: 100vh;
+  background-color: $mainColor;
+  position: fixed;
+  top: 55px;
+  left: -200px;
+  color: white;
+  font-size: 11px;
+  transition: left .3s ease;
+}
+
+/* Burger Icon */
+
+div.burgerIcon {
+  z-index: 100;
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  right: 10px;
+  &:hover {
+    cursor: pointer;
+    span {
+      background-color: white;
+    }
+  }
+
+  span {
+    width: 30px;
+    height: 2px;
+    margin: 2px;
+    background-color: $secondColor;
+  }
+}
+
+/* Backdrop */
+
+div.backdrop {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 25;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: $mainColor, $alpha: 0);
+  //background-color: red;
+}
+
 
 @import 'myStyleMobile';

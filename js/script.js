@@ -12,6 +12,7 @@ const data = {
   mapCenterGlobal: '', // default center of goole maps
   markerIcon: '',
   markerIconBigger: '',
+  isDrawerOpen: false,
 };
 
 /* OCTOPUS */
@@ -111,6 +112,10 @@ const controller = {
     view.closeDetailAttraction();
   },
 
+  toggleDrawer: () => {
+    data.isDrawerOpen = !data.isDrawerOpen;
+  },
+
   init: async () => {
     await controller.setAttractionData();
     data.mapGlobal = await controller.createMap();
@@ -125,16 +130,19 @@ const view = {
   displayAttractions: () => {
     const linkContainer = document.querySelector('.attraction-list');
     const linkTemplate = document.querySelector('script[data-template="attraction"]').innerHTML;
+    const drawer = document.querySelector('div.drawer');
 
     const attractions = controller.getAttractionData();
 
     linkContainer.innerHTML = '';
+    drawer.innerHTML = '';
 
     attractions.forEach((attr) => {
       const link = linkTemplate
         .replace(/{{id}}/g, attr.id)
         .replace(/{{name}}/g, attr.name);
       linkContainer.insertAdjacentHTML('beforeend', link);
+      drawer.insertAdjacentHTML('beforeend', link);
     });
   },
 
@@ -154,7 +162,7 @@ const view = {
       .replace(/{{url}}/g, attr.url);
 
     setTimeout(() => {
-      mapContainer.style.height = '65vh';
+      mapContainer.style.height = '60vh';
       informationBar.style.width = '100%';
       informationBar.style.height = '100%';
       informationBar.innerHTML = '';
@@ -167,6 +175,14 @@ const view = {
     informationBar.style.height = 0;
     informationBar.style.width = 0;
     informationBar.innerHTML = '';
+  },
+
+  clickBurgerIconHandler: () => {
+    const drawer = document.querySelector('div.drawer');
+    const backdrop = document.querySelector('div.backdrop');
+    controller.toggleDrawer();
+    drawer.style.left = data.isDrawerOpen ? '0' : '-200px';
+    backdrop.style.display = data.isDrawerOpen ? 'block' : 'none';
   },
 
   init: () => {

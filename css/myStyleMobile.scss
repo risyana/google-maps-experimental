@@ -7,6 +7,10 @@
   div.sidebar {
     width: 100%;
     height: 60px;
+
+    h3.title {
+      font-size: 1em;
+    }
   }
 
   div.mapContainer {
@@ -25,6 +29,7 @@
 
   /* Information Bar */
   div.informationBar {
+    z-index: 35;
     display: flex;
     flex-direction: column;
     width: 0;
@@ -63,27 +68,18 @@
       padding-left: 2px;
     }
 
-    p#desc {
-      margin-left: 4px;
-      margin-right: 4px;
+    p#desc, p#span_address, p#span_url {
+      margin: 0 7px 7px 7px;
     }
 
-    p#span_address {
-      margin-left: 4px;
-      font-size: 11px;
-    }
+  }
 
-    p#span_url {
-      margin-left: 4px;
-      font-size: 11px;
-
-      a#url {
-        font-size: 11px;
-        &:hover {
-          font-size: 11px;
-        }
-      }
-    }
-
+  /* Drawer */
+  div.drawer {
+    display: block;
+  }
+  /* Burger Icon */
+  div.burgerIcon {
+    display: flex;
   }
 }
