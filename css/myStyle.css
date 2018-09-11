@@ -1,56 +1,63 @@
 /* Body */
 body {
+  font-family: 'Trebuchet MS';
   background-color: #282c37; }
-  body div#menu {
-    width: 230px;
-    padding-top: 80px;
-    background-color: #282c37;
-    height: 80vh; }
-    body div#menu div#browse h3 {
-      color: #56b8e6;
-      margin-left: 15px; }
-    body div#menu ul {
-      padding: 0;
-      list-style-type: none; }
-    body div#menu li {
-      font-weight: bold;
-      font-size: 12px; }
-      body div#menu li a.browse {
-        display: block;
-        background-color: inherit;
-        color: white;
-        width: 100%;
-        border: none;
-        outline: none;
-        text-align: left;
-        cursor: pointer;
-        transition: 0.3s;
-        padding: 10px;
-        padding-left: 15px; }
-        body div#menu li a.browse:hover {
-          color: #56b8e6;
-          text-decoration: none; }
-      body div#menu li a.active {
+
+/* Layout */
+div.container {
+  margin: -10px;
+  display: flex;
+  height: 100vh;
+  overflow: hidden; }
+
+div.sidebar {
+  width: 300px; }
+
+div.mapContainer {
+  display: flex;
+  flex-grow: 1; }
+
+div.sidebar {
+  background-color: #282c37; }
+  div.sidebar h3.title {
+    color: #56b8e6;
+    margin-left: 15px; }
+    div.sidebar h3.title:hover {
+      cursor: pointer; }
+  div.sidebar ul {
+    padding: 0;
+    list-style-type: none; }
+  div.sidebar li {
+    font-weight: bold;
+    font-size: 12px; }
+    div.sidebar li a.browse {
+      display: block;
+      background-color: inherit;
+      color: white;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 10px;
+      padding-left: 15px; }
+      div.sidebar li a.browse:hover {
         color: #56b8e6;
-        background-color: #1c1f27; }
+        text-decoration: none; }
+    div.sidebar li a.active {
+      color: #56b8e6;
+      background-color: #1c1f27; }
 
 /* Map Container */
 div#header {
   background-color: #282c37;
   color: white;
-  width: 100%;
-  height: 80px;
-  position: fixed;
-  z-index: 4;
-  top: 0;
-  right: 0;
-  transition: 0.5s;
-  padding-left: 20px;
+  height: 60px;
   text-align: center; }
 
 /* Map */
 div#maps {
-  display: block;
   width: 100%;
   height: 100vh; }
 
@@ -67,7 +74,7 @@ div#maps {
 
 .marker_label_mouseover {
   width: auto;
-  height: 60px;
+  height: 25px;
   border: 1px solid #56b8e6;
   border-radius: 60px 0px 0px 60px;
   background: #56b8e6;
@@ -82,7 +89,7 @@ div#informasi {
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 80px;
+  top: 0;
   right: 0;
   background-color: #282c37;
   overflow-x: hidden;

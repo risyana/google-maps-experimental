@@ -5,55 +5,75 @@ $thirdColor: #1c1f27;
 /* Body */
 
 body {
+  font-family: 'Trebuchet MS';
+  background-color: $mainColor;
+}
+
+/* Layout */
+
+div.container {
+  margin: -10px;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+div.sidebar {
+  width: 300px;
+}
+
+div.mapContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+
+div.sidebar {
   background-color: $mainColor;
 
-  div#menu {
-    width: 230px;
-    padding-top: 80px;
-    background-color: $mainColor;
-    height: 80vh;
+  h3.title {
+    color: $secondColor;
+    margin-left: 15px;
 
-    div#browse {
-      h3 {
-        color: $secondColor;
-        margin-left: 15px;
-      }
-    }
-
-    ul {
-      padding: 0;
-      list-style-type: none;
-    }
-
-    li {
-      font-weight: bold;
-      font-size: 12px;
-
-      a.browse {
-        display: block;
-        background-color: inherit;
-        color: white;
-        width: 100%;
-        border: none;
-        outline: none;
-        text-align: left;
-        cursor: pointer;
-        transition: 0.3s;
-        padding: 10px;
-        padding-left: 15px;
-
-        &:hover {
-          color: $secondColor;
-          text-decoration: none;
-        }
-      }
-
-      a.active {
-        color: $secondColor;
-        background-color: $thirdColor;
-      }
+    &:hover {
+      cursor: pointer;
     }
   }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: 12px;
+
+    a.browse {
+      display: block;
+      background-color: inherit;
+      color: white;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 10px;
+      padding-left: 15px;
+
+      &:hover {
+        color: $secondColor;
+        text-decoration: none;
+      }
+    }
+
+    a.active {
+      color: $secondColor;
+      background-color: $thirdColor;
+    }
+  }
+
 }
 
 /* Map Container */
@@ -61,21 +81,13 @@ body {
 div#header {
   background-color: $mainColor;
   color: white;
-  width: 100%;
-  height: 80px;
-  position: fixed;
-  z-index: 4;
-  top: 0;
-  right: 0;
-  transition: 0.5s;
-  padding-left: 20px;
+  height: 60px;
   text-align: center;
 }
 
 /* Map */
 
 div#maps {
-  display: block;
   width: 100%;
   height: 100vh;
 }
@@ -94,7 +106,7 @@ div#maps {
 
 .marker_label_mouseover {
   width: auto;
-  height: 60px;
+  height: 25px;
   border: 1px solid $secondColor;
   border-radius: 60px 0px 0px 60px;
   background: $secondColor;
@@ -111,7 +123,7 @@ div#informasi {
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 80px;
+  top: 0;
   right: 0;
   background-color: $mainColor;
   overflow-x: hidden;
