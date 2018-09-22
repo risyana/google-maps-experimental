@@ -256,5 +256,22 @@ div.backdrop {
   //background-color: red;
 }
 
+/* Notice */
+
+div.experimentalNotice {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  border: 2px solid tomato;
+  background-color: pink;
+  z-index: 24;
+  padding: 5px;
+  font-size: 12px;
+  
+ span.notes {
+    font-weight: bold;
+  }
+}
+
 
 @import 'myStyleMobile';

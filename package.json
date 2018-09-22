@@ -1,7 +1,7 @@
 {
-  "name": "singapore-attractions",
+  "name": "top-attractions",
   "version": "1.0.0",
-  "description": "",
+  "description": "This apps is experimental only. Not for Production.",
   "main": "index.js",
   "scripts": {
     "start": "reload -b",

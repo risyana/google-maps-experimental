@@ -188,6 +188,19 @@ div.backdrop {
   left: 0;
   background-color: rgba(40, 44, 55, 0); }
 
+/* Notice */
+div.experimentalNotice {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  border: 2px solid tomato;
+  background-color: pink;
+  z-index: 24;
+  padding: 5px;
+  font-size: 12px; }
+  div.experimentalNotice span.notes {
+    font-weight: bold; }
+
 @media (max-width: 450px) {
   /* Layout */
   div.container {
@@ -252,6 +265,10 @@ div.backdrop {
 
   /* Burger Icon */
   div.burgerIcon {
-    display: flex; } }
+    display: flex; }
+
+  /* Notice */
+  div.experimentalNotice {
+    top: 65px; } }
 
 /*# sourceMappingURL=myStyle.css.map */
