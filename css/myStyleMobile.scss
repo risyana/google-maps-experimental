@@ -68,7 +68,9 @@
       padding-left: 2px;
     }
 
-    p#desc, p#span_address, p#span_url {
+    p#desc,
+    p#span_address,
+    p#span_url {
       margin: 0 7px 7px 7px;
     }
 
@@ -77,7 +79,13 @@
   /* Drawer */
   div.drawer {
     display: block;
+    width: 170px;
+
+    li {
+      font-size: 10px;
+    }
   }
+
   /* Burger Icon */
   div.burgerIcon {
     display: flex;

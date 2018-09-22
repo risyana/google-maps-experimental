@@ -238,12 +238,17 @@ div.backdrop {
       margin-top: 0;
       padding: 2px;
       padding-left: 2px; }
-    div.informationBar p#desc, div.informationBar p#span_address, div.informationBar p#span_url {
+    div.informationBar p#desc,
+    div.informationBar p#span_address,
+    div.informationBar p#span_url {
       margin: 0 7px 7px 7px; }
 
   /* Drawer */
   div.drawer {
-    display: block; }
+    display: block;
+    width: 170px; }
+    div.drawer li {
+      font-size: 10px; }
 
   /* Burger Icon */
   div.burgerIcon {
