@@ -1,11 +1,15 @@
-/* External JS */
-const CONFIG_URL = '../data/config.js';
 
 /* CONSTANT */
 const ATTRACTIONS = '../data/data.json';
+const CONFIG_URL = '../data/config.json';
 const LAT_LNG = [1.2922997, 103.8571885];
 const ZOOM_IN = 17;
 const ZOOM_INIT = 15;
+const CONFIG = {
+  TITLE: null,
+  LIMIT: null,
+};
+
 
 /* MODEL */
 const data = {
@@ -22,9 +26,13 @@ const data = {
 const controller = {
 
   setAttractionData: async () => {
-    let result = await fetch(ATTRACTIONS);
-    result = await result.json();
-    data.dataGlobal = result.data;
+    try {
+      let result = await fetch(ATTRACTIONS);
+      result = await result.json();
+      data.dataGlobal = result.data;
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   getAttractionData: () => data.dataGlobal,
@@ -102,24 +110,27 @@ const controller = {
   },
 
   clickAttractionHanlder: (id) => {
-    // controller.backToInitialZoomCenter();
-    setTimeout(() => {
-      data.mapGlobal.setZoom(ZOOM_IN);
-      view.displayDetailAttraction(id);
-    }, 400);
-  },
-
-  backToInitialZoomCenter: () => {
-    data.mapGlobal.setCenter(data.mapCenterGlobal);
-    data.mapGlobal.setZoom(ZOOM_INIT);
-    view.closeDetailAttraction();
+    data.mapGlobal.setZoom(ZOOM_IN);
+    view.displayDetailAttraction(id);
   },
 
   toggleDrawer: () => {
     data.isDrawerOpen = !data.isDrawerOpen;
   },
 
+  setConfigParameter: async (url) => {
+    try {
+      let config = await fetch(url);
+      config = await config.json();
+      CONFIG.TITLE = config.title;
+      CONFIG.LIMIT = config.limit;
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
   init: async () => {
+    await controller.setConfigParameter(CONFIG_URL);
     await controller.setAttractionData();
     data.mapGlobal = await controller.createMap();
     data.markersGlobal = await controller.createMarker();
@@ -164,13 +175,11 @@ const view = {
       .replace(/{{address}}/g, attr.address)
       .replace(/{{url}}/g, attr.url);
 
-    setTimeout(() => {
-      mapContainer.style.height = '60vh'; // the impact will be seen in the mobile view
-      informationBar.style.width = '100%'; // open informationBar
-      informationBar.style.height = '100%'; // open informationBar
-      informationBar.innerHTML = '';
-      informationBar.insertAdjacentHTML('beforeend', detailAttraction);
-    }, 500);
+    mapContainer.style.height = '60vh'; // the impact will be seen in the mobile view
+    informationBar.style.width = '100%'; // open informationBar
+    informationBar.style.height = '100%'; // open informationBar
+    informationBar.innerHTML = '';
+    informationBar.insertAdjacentHTML('beforeend', detailAttraction);
   },
 
   closeDetailAttraction: () => {
@@ -194,18 +203,9 @@ const view = {
     document.title = CONFIG.TITLE;
   },
 
-  setOtherJsToDOM: (src) => {
-    const script = document.createElement('script');
-    script.src = src;
-    document.head.appendChild(script);
-  },
-
   init: () => {
-    view.setOtherJsToDOM(CONFIG_URL);
-    setTimeout(() => {
-      view.setTitle();
-      view.displayAttractions();
-    }, 1000);
+    view.setTitle();
+    view.displayAttractions();
   },
 };
 
