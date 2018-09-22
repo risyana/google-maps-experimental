@@ -210,21 +210,21 @@ const view = {
 };
 
 /* Google Maps callback */
-function initMap() {
-  data.mapCenterGlobal = new google.maps.LatLng(LAT_LNG[0], LAT_LNG[1]);
+async function initMap() {
+  data.mapCenterGlobal = await new google.maps.LatLng(LAT_LNG[0], LAT_LNG[1]);
 
   data.markerIcon = {
     url: 'image/svg/location.svg',
-    scaledSize: new google.maps.Size(50, 50),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(26, 50),
+    scaledSize: await new google.maps.Size(50, 50),
+    origin: await new google.maps.Point(0, 0),
+    anchor: await new google.maps.Point(26, 50),
   };
   data.markerIconBigger = {
     url: 'image/svg/location.svg',
-    scaledSize: new google.maps.Size(120, 120),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(60, 120),
+    scaledSize: await new google.maps.Size(120, 120),
+    origin: await new google.maps.Point(0, 0),
+    anchor: await new google.maps.Point(60, 120),
   };
-}
 
-controller.init();
+  controller.init();
+}
