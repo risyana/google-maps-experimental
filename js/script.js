@@ -1,3 +1,6 @@
+/* External JS */
+const CONFIG_URL = '../data/config.js';
+
 /* CONSTANT */
 const ATTRACTIONS = '../data/data.json';
 const LAT_LNG = [1.2922997, 103.8571885];
@@ -99,7 +102,7 @@ const controller = {
   },
 
   clickAttractionHanlder: (id) => {
-    controller.backToInitialZoomCenter();
+    // controller.backToInitialZoomCenter();
     setTimeout(() => {
       data.mapGlobal.setZoom(ZOOM_IN);
       view.displayDetailAttraction(id);
@@ -162,9 +165,9 @@ const view = {
       .replace(/{{url}}/g, attr.url);
 
     setTimeout(() => {
-      mapContainer.style.height = '60vh';
-      informationBar.style.width = '100%';
-      informationBar.style.height = '100%';
+      mapContainer.style.height = '60vh'; // the impact will be seen in the mobile view
+      informationBar.style.width = '100%'; // open informationBar
+      informationBar.style.height = '100%'; // open informationBar
       informationBar.innerHTML = '';
       informationBar.insertAdjacentHTML('beforeend', detailAttraction);
     }, 500);
@@ -185,8 +188,24 @@ const view = {
     backdrop.style.display = data.isDrawerOpen ? 'block' : 'none';
   },
 
+  setTitle: () => {
+    const h3Title = document.querySelector('h3.title');
+    h3Title.innerHTML = CONFIG.TITLE;
+    document.title = CONFIG.TITLE;
+  },
+
+  setOtherJsToDOM: (src) => {
+    const script = document.createElement('script');
+    script.src = src;
+    document.head.appendChild(script);
+  },
+
   init: () => {
-    view.displayAttractions();
+    view.setOtherJsToDOM(CONFIG_URL);
+    setTimeout(() => {
+      view.setTitle();
+      view.displayAttractions();
+    }, 1000);
   },
 };
 
