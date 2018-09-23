@@ -2,9 +2,9 @@
 /* CONSTANT */
 const ATTRACTIONS = '../data/data.json';
 const CONFIG_URL = '../data/config.json';
-const LAT_LNG = [1.2922997, 103.8571885];
+const LAT_LNG = [-6.9140474, 107.6199442]; // center of Bandung
 const ZOOM_IN = 17;
-const ZOOM_INIT = 15;
+const ZOOM_INIT = 14;
 const CONFIG = {
   TITLE: null,
   LIMIT: null,

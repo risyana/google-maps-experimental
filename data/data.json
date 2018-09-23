@@ -2,84 +2,43 @@
   "data" : [
     {
       "id": "1",
-      "name": "Merlion",
-      "loc": {"lat": 1.286920, "lng" : 103.854570},
-      "desc": "The Merlion is a well-known marketing icon of Singapore depicted as a mythical creature with a lions head and the body of a fish. It is widely used as a mascot and national personification of Singapore",
-      "img": "0",
-      "address": "One Fullerton; Singapore 049213",
-      "url": "http://sample-merlion.com/"
+      "name": "Gedung sate",
+      "loc": {"lat": -6.902481, "lng" : 107.618813},
+      "desc": "Gedung Sate is a public building in Bandung, West Java, Indonesia. It was designed according to a neoclassical design incorporating native Indonesian elements by Dutch architect J. Gerber to be the seat of the Dutch East Indies department of Transport, Public Works and Water Management; the building was completed in 1920. Today, the building serves as the seat of the governor of the province of West Java,[1] and also a museum.[2] (Wikipedia)",
+      "address": "Jalan Diponegoro No. 22",
+      "url": "http://sample-gedung-sate.com/"
     },
     {
       "id": "2",
-      "name": "Asian Civilisations Museum",
-      "loc": {"lat": 1.287466, "lng" : 103.851424 },
-      "desc": "The Asian Civilisations Museum is an institution which forms a part of the four museums in Singapore. the other three being the Peranakan Museum at Old Tao Nan School. the National Museum of Singapore and the Singapore Art Museum.",
-      "img": "1",
-      "address": "1 Empress Pl; Singapore 179555",
-      "url": "http://sample-asiansmuseum.com/"
+      "name": "Kota Tua Jalan Braga",
+      "loc": {"lat": -6.917923, "lng" : 107.609441 },
+      "desc": "Braga Street (official name in Indonesian: Jalan Braga) is a small street in the center of Bandung, Indonesia, which was famous in the 1920s as a promenade street. Chic cafes, boutiques and restaurants with European ambiance along the street had made the city to attain the Paris of Java nickname. The street starts from a T-junction with the Asia-Afrika Street (or De Groote Postweg during the colonial times) to the north until the city council (balaikota), which was formerly a coffee warehouse. (Wikipedia)",
+      "address": "Jalan Braga",
+      "url": "http://sample-braga.com/"
     },
     {
       "id": "3",
-      "name": "Clarke Quay",
-      "loc": {"lat": 1.290555, "lng" : 103.846188},
-      "desc": "Clarke Quay is a historical riverside quay in Singapore. located within the Singapore River Planning Area. The quay is situated upstream from the mouth of the Singapore River and Boat Quay",
-      "img": "2",
-      "address": "3 River Valley Rd; Singapore 179024",
-      "url": "http://sample-clarkequay.com/"
+      "name": "Alun Alun Bandung",
+      "loc": {"lat": -6.921874, "lng" : 107.607132},
+      "desc": "Alun-alun Bandung adalah pusat kota Bandung yang dicirikan oleh sebidang tanah yang luas. Di sekelilingnya ada bangunan-bangunan fungsional. Tempatnya ada di dekat Grote Postweg.[1] (Wikipedia)",
+      "address": "Jalan Asia Afrika",
+      "url": "http://sample-alunalun.com/"
     },
     {
       "id": "4",
-      "name": "Fort Canning Park",
-      "loc": {"lat": 1.295526, "lng" : 103.845331 },
-      "desc": "Fort Canning is a small hill slightly more than 60 metres high in the southeast portion of the island city-state of Singapore. within the Central Area that forms Singapores central business district.",
-      "img": "3",
+      "name": "Trans Studio Bandung",
+      "loc": {"lat": -6.925063, "lng" : 107.636513 },
+      "desc": "Trans Studio Bandung is an amusement park in Bandung, Indonesia. Trans Studio is built on a land with size of 4.2 hectares with an investment cost up to 2 trillion Rupiah.[1] Trans Studio Bandung is composed of several sections, among others: a shopping mall called Trans Studio Mall (of usually referred as TSM), a recreation park called Trans Studio and a luxury hotel called Trans Studio Hotel. (Wikipedia)",
       "address": "River Valley Rd; Singapore 179037",
-      "url": "http://sample-fortcanningpark.com/"
+      "url": "http://sample-transtudio.com/"
     },
     {
       "id": "5",
-      "name": "Orchard Road",
-      "loc": {"lat": 1.302279, "lng" : 103.837399 },
-      "desc": "Orchard Road is Singapore’s retail heart. with discount outlets. department stores and upscale boutiques. alongside luxury hotels. Emerald Hill Road is a mix of colorful Chinese baroque houses and casual pubs. while al fresco bars and eateries can be found along nearby Cuppage Terrace. The Newton Food Centre is a popular foodie hub. offering everything from barbecued seafood and roasted meats to traditional desserts.",
-      "img": "4",
-      "address": "Orchard Road; Singapore",
-      "url": "http://sample-orchardroad.com/"
-    },
-    {
-      "id": "6",
-      "name": "Singapore Flyer",
-      "loc": {"lat": 1.289332, "lng" : 103.863152 },
-      "desc": "The Singapore Flyer is a giant Ferris wheel in Singapore. Described by its operators as an observation wheel. it opened in 2008. construction having taken about 2 years.",
-      "img": "5",
-      "address": "30 Raffles Ave; Singapore 039803",
-      "url": "http://sample-singaporeflyer.com/"
-    },
-    {
-      "id": "7",
-      "name": "Marina Bay Sands",
-      "loc": {"lat": 1.283099, "lng" : 103.860295},
-      "desc": "Marina Bay Sands is an integrated resort fronting Marina Bay in Singapore. At its opening in 2010. it was billed as the worlds most expensive standalone casino",
-      "img": "6",
-      "address": "10 Bayfront Avenue; Singapore 018956",
-      "url": "http://sample-marinabaysands.com/"
-    },
-    {
-      "id": "8",
-      "name": "Gardens By The Bay",
-      "loc": {"lat": 1.281790, "lng" : 103.863954},
-      "desc": "Gardens by the Bay is a nature park spanning 101 hectares of reclaimed land in central Singapore. adjacent to the Marina Reservoir. The park consists of three waterfront gardens: Bay South Garden. Bay East Garden and Bay Central Garden",
-      "img": "7",
-      "address": "18 Marina Gardens Dr; Singapore 018953",
-      "url": "http://sample-gardensbythebay.com/"
-    },
-    {
-      "id": "9",
-      "name": "Chinatown",
-      "loc": {"lat": 1.284193, "lng" : 103.843362},
-      "desc": "Chinatown is a subzone and ethnic enclave located within the Outram district in the Central Area of Singapore. Featuring distinctly Chinese cultural elements. Chinatown has had a historically concentrated ethnic Chinese populatio",
-      "img": "8",
-      "address": "Chinatown; Singapore",
-      "url": "http://sample-chinatown.com/"
+      "name": "Bandung Zoo",
+      "loc": {"lat": -6.890287, "lng" : 107.606840 },
+      "desc": "Kebun Binatang Bandung or Bandung Zoological Gardens is a zoo located in the city of Bandung in West Java, Indonesia. It was created in 1933 when two existing zoos in the city (Cimindi zoo and Dago Atas zoo) were combined and moved to the current location on Taman Sari street. The new zoo was located in Jubileum Park, a botanical garden created in 1923 to celebrate the Silver Jubilee of Queen Wilhelmina of the Netherlands.[1] (Wikipedia).",
+      "address": "Jalan Kebun Binatang No.6, Lebak Siliwangi, Coblong",
+      "url": "http://sample-zoo.com/"
     }
   ]
 }
