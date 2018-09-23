@@ -129,6 +129,12 @@ const controller = {
     }
   },
 
+  backToInitialZoomCenter: () => {
+    data.mapGlobal.setCenter(data.mapCenterGlobal);
+    data.mapGlobal.setZoom(ZOOM_INIT);
+    view.closeDetailAttraction();
+  },
+
   init: async () => {
     await controller.setConfigParameter(CONFIG_URL);
     await controller.setAttractionData();
